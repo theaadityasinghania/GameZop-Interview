@@ -8,7 +8,7 @@ class Home extends Component {
 
 	addNewUser(json){
 		const store = appStore;
-		console.log(json);
+		// console.log(json);
 		store.addUser(json);
 	}
 
@@ -30,12 +30,26 @@ class Home extends Component {
 	    				<div className="card blue-grey darken-1">
 	    					<div className="card-content white-text">
 	    						<span className="card-title">Data</span>
-	    						<p>
-	    						</p>
+	    						<table>
+	    							<tbody>
+	    								{
+			    							store.userList.map((u,i)=>{
+			    								if(u.userId===1){
+			    									return(
+				    									<tr key={i}>
+				    										<td>{u.id} : {u.title}</td>
+				    									</tr>
+				    								)
+			    								}
+			    							})
+			    						}
+	    							</tbody>
+	    						</table>
 	    					</div>
 	    				</div>
 	    			</div>
 	    		</div>
+	    		<div>This is the sum: {store.sumOfId}</div>
 
 	    		<button onClick={()=>this.click()}>GET DATA</button>
 	    	</div>

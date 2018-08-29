@@ -7,10 +7,15 @@ class Store{
 	@observable userList = []
 
 	@action addUser(json){
-		this.userList.push(json)
+		// console.log(json);
+		this.userList=json
 	}
 
-	@computed get idCount(){}
+	@computed get sumOfId(){
+		return this.userList.filter(({userId}) => userId === 1).reduce((n,u)=>{
+				return n + u.id;
+		}, 0)
+	}
 }
 
 
