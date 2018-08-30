@@ -6,10 +6,10 @@ import appStore from './Store'
 @observer
 class Home extends Component {
 
-	addNewUser(json){
+	setNewPost(json){
 		const store = appStore;
 		// console.log(json);
-		store.addUser(json);
+		store.setPosts(json);
 	}
 
 
@@ -18,7 +18,7 @@ class Home extends Component {
 		let url = new URL(baseURL)
 		fetch(url)
 		.then(data=>data.json())
-		.then(json=>this.addNewUser(json)) //instead of console.log(json)
+		.then(json=>this.setNewPost(json)) //instead of console.log(json)
 	}
 
 	render() {

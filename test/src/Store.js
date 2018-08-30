@@ -6,7 +6,7 @@ class Store{
 
 	@observable userList = []
 
-	@action addUser(json){
+	@action setPosts(json){
 		// console.log(json);
 		this.userList=json
 	}
