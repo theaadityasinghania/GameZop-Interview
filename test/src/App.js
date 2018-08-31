@@ -24,25 +24,18 @@ class App extends Component {
         <header style={headStyle}></header>
         <BR>
           <div>
-            <div className="row">
-              <div className="col s4">
-                <NavTab to="/home">Home</NavTab>
-              </div>
-              <div className="col s4">
-                <NavTab to="/news">News</NavTab>
-              </div>
-              <div className="col s4">
-                <NavTab to="/sports">Sports</NavTab>
-              </div>
-            </div>
-       
+            <center className="main-navbar">
+              <NavTab to="/home">Home</NavTab>
+              <NavTab to="/news">News</NavTab>
+              <NavTab to="/sports">Sports</NavTab>
+            </center>
             
-              <Switch>
-                <Route exact path="/" render={() => <Redirect replace to="/home" />} />
-                <Route path="/home" component={Home} />
-                <Route path="/news" component={News} />
-                <Route path="/sports" component={Sports} />
-              </Switch>
+            <Switch>
+              <Route exact path="/" render={() => <Redirect replace to="/home" />} />
+              <Route path="/home" component={Home} />
+              <Route path="/news" component={News} />
+              <Route path="/sports" component={Sports} />
+            </Switch>
           </div>
         </BR>
       </div>
