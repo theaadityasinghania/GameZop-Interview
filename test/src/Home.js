@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {observer} from 'mobx-react';
-import appStore from './Store'
+import appStore from './Store';
+import {Link} from 'react-router-dom'
 
 
 @observer
@@ -49,9 +50,17 @@ class Home extends Component {
 	    				</div>
 	    			</div>
 	    		</div>
-	    		<div>This is the sum: {store.sumOfId}</div>
+	    		<div className="center-align">This is the sum: {store.sumOfId}</div>
 
-	    		<button onClick={()=>this.click()}>GET DATA</button>
+	    		<div className="center-align">
+	    			<br/>
+	    			<button onClick={()=>this.click()}>GET DATA</button>
+	    		</div>
+
+	    		<div className="center-align">
+	    			<br/>
+	    			<button><Link to="/news">SWITCH</Link></button>
+	    		</div>
 	    	</div>
 	    );
 	}
